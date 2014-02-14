@@ -51,3 +51,5 @@ gem 'pry-rails'
 gem 'omniauth-facebook'
 
 gem 'omniauth'
+
+gem 'bcrypt-ruby', '~> 3.1.2'

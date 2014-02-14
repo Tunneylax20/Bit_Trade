@@ -1,9 +1,14 @@
 BitTrade::Application.routes.draw do
 
+  resources :users do
+    resources :accounts 
+  end
+
+  get "/login", to: "sessions#new"
+  post "/session", to: "sessions#create"
+  delete "/session", to: "sessions#destroy"
+
   root "welcome#index"
 
-  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-  match 'auth/failure', to: redirect('/'), via: [:get, :post]
-  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
 end
