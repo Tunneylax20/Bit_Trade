@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def new
-    @price = get_current_price
     render(:new)
   end
 
@@ -31,11 +30,6 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-  private
 
-  def get_current_price
-    from_bitstamp = HTTParty.get("https://www.bitstamp.net/api/ticker/")
-    return from_bitstamp["last"]
-  end
 
 end
