@@ -21,6 +21,20 @@ before_action :authenticate, :authorize, only: [:edit, :update]
   def show
   end
 
+  def edit
+    @update_worked = true
+  end
+
+  def update
+    @update_worked = @user.update(user_params)
+    
+    if @update_worked
+      redirect_to user_path(@user)
+    else
+      render(:edit)
+    end
+  end
+
   def destroy
     @user.destroy
     session.destroy
