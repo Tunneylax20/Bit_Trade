@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-before_action :load_user, only: [:show, :edit]
+before_action :load_user, only: [:show, :edit, :update, :destroy]
 ### authenticate and authorize users for edit and update ###
 before_action :authenticate, :authorize, only: [:edit, :update]
 
@@ -19,6 +19,12 @@ before_action :authenticate, :authorize, only: [:edit, :update]
   end
 
   def show
+  end
+
+  def destroy
+    @user.destroy
+    session.destroy
+    redirect_to root_path
   end
 
   private
