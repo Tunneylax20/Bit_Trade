@@ -1,6 +1,58 @@
 <h1>Welcome <%=@user.user_name %></h1>
-<p>USD balance: <%=@user.usd %></p>
+<p>USD balance: $<%=@user.usd %></p>
 <p>BTC balance: <%=@user.btc %></p>
+
+
+<script type="text/javascript">
+  function updateTotal(){
+
+    var quantity = document.getElementById('qty').value;
+    var current_price = document.getElementById('current_price').value;
+    
+    console.log(quantity);
+    
+    document.getElementById('total').value = quantity * current_price ; 
+  }
+</script>
+
+<form action="/users/<%= params[:user_id] %>/transactions" method="POST">
+<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+
+  <label>
+    Buy: 
+    <input type="radio" name="buy" value="true" checked="true"/>   
+  </label> <br>
+
+  <label>
+    Sell:  
+    <input type="radio" name="buy" value="false"/>   
+  </label> <br>
+
+  <label>
+    QTY: 
+    <input id="qty" type="integer" name="amount" value="1" onkeyup="updateTotal()" />
+  </label> <br>
+
+  <label>
+    Current Price:
+    <input id="current_price" type="integer" name="price" value=<%=get_current_price%> disabled="true"/>
+  </label> <br>
+
+  <label>
+    Total: 
+    <input id="total" type="text" name="price" disabled="true" value=<%=get_current_price%> />
+  </label>
+  
+
+
+</form>
+
+
+
+
+
+
+
 
 
 <p><%= link_to "Edit My Info", edit_user_path(@user) %></p>
