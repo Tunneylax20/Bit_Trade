@@ -49,7 +49,10 @@ before_action :authenticate, :authorize, only: [:edit, :update]
 
 ### reflects sign up form ###
   def user_params
-    params.require(:user).permit(:email, :user_name, :password, :password_confirmation)
+    # if params[:user][:money]==nil
+    #   params[:user][:money]=0
+    # end
+    params.require(:user).permit(:email, :user_name, :password, :password_confirmation,)
   end
 
   def authenticate

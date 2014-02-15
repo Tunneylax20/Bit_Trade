@@ -4,6 +4,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :user_name
       t.string :password_digest
+      t.decimal :usd, default: 25000
+      t.decimal :btc, default: 0
       t.timestamps
     end
   end

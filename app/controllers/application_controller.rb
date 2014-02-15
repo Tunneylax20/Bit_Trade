@@ -11,6 +11,11 @@ class ApplicationController < ActionController::Base
     current_user.present?
   end
 
-  helper_method :current_user, :logged_in?
-  
+  def get_current_price
+    from_bitstamp = HTTParty.get("https://www.bitstamp.net/api/ticker/")
+    return from_bitstamp["last"]
+  end
+
+  helper_method :current_user, :logged_in?, :get_current_price
+
 end

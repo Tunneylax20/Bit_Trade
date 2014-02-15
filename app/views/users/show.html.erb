@@ -1,4 +1,7 @@
 <h1>Welcome <%=@user.user_name %></h1>
+<p>USD balance: <%=@user.usd %></p>
+<p>BTC balance: <%=@user.btc %></p>
+
 
 <p><%= link_to "Edit My Info", edit_user_path(@user) %></p>
 
