@@ -53,3 +53,7 @@ gem 'omniauth-facebook'
 gem 'omniauth'
 
 gem 'bcrypt-ruby', '~> 3.1.2'
+
+gem 'rails_12factor', group: :production
+
+ruby "2.1.0"
