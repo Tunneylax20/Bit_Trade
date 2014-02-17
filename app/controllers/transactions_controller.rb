@@ -3,14 +3,17 @@ class TransactionsController < ApplicationController
   before_action(:load_user, only: [:new, :create] )
 
   def new
-    
+
   end
 
   def create
-    @transaction = Transaction.new(:price, :btc_total, :usd_total, :buy, :user_id)
+    @transaction = Transaction.new({:price => params[:price], :btc_total => params[:btc_total], :usd_total => params[:usd_total], :buy => params[:buy], :user_id => params[:user_id]})
     @transaction.save
 
-    redirect_to_user_path(@user)
+    redirect_to user_path(@user)
+  end
+
+  def show
   end
 
 
