@@ -1,7 +1,7 @@
 BitTrade::Application.routes.draw do
 
   resources :users do
-    resources :transactions, only: [:create, :show] 
+    resources :transactions, only: [:create, :show, :new] 
   end
 
   get "/login", to: "sessions#new"

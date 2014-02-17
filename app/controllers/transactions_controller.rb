@@ -3,6 +3,7 @@ class TransactionsController < ApplicationController
   before_action(:load_user, only: [:new, :create] )
 
   def new
+    
   end
 
   def create

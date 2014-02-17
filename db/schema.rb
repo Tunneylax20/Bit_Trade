@@ -18,10 +18,9 @@ ActiveRecord::Schema.define(version: 20140215201343) do
 
   create_table "transactions", force: true do |t|
     t.decimal  "price"
-    t.decimal  "btc"
-    t.decimal  "usd"
+    t.decimal  "btc_total"
+    t.decimal  "usd_total"
     t.boolean  "buy"
-    t.boolean  "sell"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
