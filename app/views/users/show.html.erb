@@ -9,13 +9,11 @@
     var quantity = document.getElementById('qty').value;
     var current_price = document.getElementById('current_price').value;
     
-    console.log(quantity);
-    
     document.getElementById('total').value = quantity * current_price ; 
   }
 </script>
 
-<form action="/users/<%= params[:user_id] %>/transactions" method="POST">
+<form action="/users/<%= @user.id %>/transactions" method="POST">
 <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
 
   <label>
@@ -30,32 +28,27 @@
 
   <label>
     QTY: 
-    <input id="qty" type="integer" name="amount" value="1" onkeyup="updateTotal()" />
+    <input id="qty" type="integer" name="btc_total" value="1" onkeyup="updateTotal()" />
   </label> <br>
 
   <label>
     Current Price:
-    <input id="current_price" type="integer" name="price" value=<%=get_current_price%> disabled="true"/>
+    <input id="current_price" type="integer" name="price" value=<%=get_current_price%> readonly="true"/>
   </label> <br>
 
   <label>
     Total: 
-    <input id="total" type="text" name="price" disabled="true" value=<%=get_current_price%> />
-  </label>
+    <input id="total" type="text" name="usd_total" readonly="true" value=<%=get_current_price%> />
+  </label><br>
+
+  <button>Submit Transaction</button>
   
 
 
 </form>
 
 
-
-
-
-
-
-
-
-<p><%= link_to "Edit My Info", edit_user_path(@user) %></p>
+<p><%= link_to "Edit My Info", edit_user_path(@user) %></p> 
 
 <%= form_tag user_path(@user), method: "delete" do %>
   <%= submit_tag("Delete My Account") %>
