@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20140215201343) do
     t.decimal  "price"
     t.decimal  "btc_total"
     t.decimal  "usd_total"
-    t.boolean  "buy"
+    t.integer  "buy"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

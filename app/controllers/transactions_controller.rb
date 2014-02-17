@@ -9,8 +9,7 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new({:price => params[:price], :btc_total => params[:btc_total], :usd_total => params[:usd_total], :buy => params[:buy], :user_id => params[:user_id]})
     @transaction.save
-
-    redirect_to user_path(@user)
+    redirect_to user_transaction_path(@user, @transaction)
   end
 
   def show

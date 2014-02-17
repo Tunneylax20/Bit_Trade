@@ -4,7 +4,7 @@ class CreateTransactions < ActiveRecord::Migration
       t.decimal :price
       t.decimal :btc_total
       t.decimal :usd_total
-      t.boolean :buy
+      t.integer :buy
       t.references :user
       t.timestamps
     end
