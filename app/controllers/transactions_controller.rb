@@ -19,7 +19,6 @@ class TransactionsController < ApplicationController
 
   def show
     @transaction = @user.transactions
-
   end
 
 

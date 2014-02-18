@@ -7,12 +7,10 @@ class User < ActiveRecord::Base
 
   def current_usd_balance
     self.usd + Transaction.where(user: self).sum('usd_total').to_f
-    
   end
 
   def current_btc_balance
     self.btc + Transaction.where(user: self).sum('btc_total').to_f
-    
   end
 
   def get_current_price
