@@ -7,10 +7,10 @@ development:
   timeout: 5000
 
 
-production: 
-  adapter: postgresql
-  encoding: unicode
-  database: bit_trade_db
-  host: localhost
-  pool: 5
-  password: 
+# production: 
+#   adapter: postgresql
+#   encoding: unicode
+#   database: bit_trade_db
+#   host: localhost
+#   pool: 5
+#   password: 

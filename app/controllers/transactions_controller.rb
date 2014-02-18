@@ -1,6 +1,6 @@
 class TransactionsController < ApplicationController
 
-  before_action(:load_user, only: [:new, :create] )
+  before_action(:load_user, only: [:new, :create, :show] )
   before_action(:buy_and_sell_logic, only: [:new, :create])
 
   def new
@@ -18,6 +18,8 @@ class TransactionsController < ApplicationController
   end
 
   def show
+    @transaction = @user.transactions
+    
   end
 
 

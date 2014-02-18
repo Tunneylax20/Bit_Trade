@@ -1,1 +1,5 @@
-Hello
+<p><%= @user.id %></p>
+<p><% @transaction.each do |transaction|%></p>
+<p><%= transaction.id %></p>
+<p><%= transaction.price %></p>
+<p><% end %></p>
