@@ -1,5 +1,23 @@
-<p><%= @user.id %></p>
-<p><% @transaction.each do |transaction|%></p>
-<p><%= transaction.id %></p>
-<p><%= transaction.price %></p>
-<p><% end %></p>
+
+
+<table class="trxns">
+  <caption>Transaction History</caption>
+    <tr class="table_head"> 
+      <th>Transaction</th>
+      <th>BTC Quantity</th>
+      <th>USD Total</th>
+      <th>Price</th>
+    </tr>
+  
+  <% @transaction.each do |transaction|%>
+    <tr>
+      <td><%= transaction.id %></td>
+      <td><%= transaction.btc_total %></td>
+      <td>$<%= transaction.usd_total %></td>
+      <td><%= transaction.price %></td>
+    </tr>
+  <% end %>
+
+</table>
+
+<%= link_to "Back to my Account", user_path(@user) %>

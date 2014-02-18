@@ -1,6 +1,8 @@
-<h1>Welcome <%=@user.user_name %></h1>
-<p>USD balance: $<%=@user.usd %></p>
-<p>BTC balance: <%=@user.btc %></p>
+<h1>Welcome <%= @user.user_name %></h1>
+<p>USD balance: $<%= @user.current_usd_balance %></p>
+<p>BTC balance: <%= @user.current_btc_balance %></p>
+
+<p>Total Balance: <%= @user.total_balance %> </p>
 
 
 <script type="text/javascript">
@@ -43,7 +45,7 @@
 
   <button>Submit Transaction</button>
   
-
+  <p><%= flash[:error] %></p>
 
 </form>
 
