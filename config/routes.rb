@@ -7,6 +7,7 @@ BitTrade::Application.routes.draw do
   get "/login", to: "sessions#new"
   post "/session", to: "sessions#create"
   delete "/session", to: "sessions#destroy"
+  get '/session', to: "sessions#destroy"
 
   root "welcome#index"
 

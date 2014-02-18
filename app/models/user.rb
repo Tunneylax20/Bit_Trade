@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   end
 
   def total_balance
-    current_usd_balance + (current_btc_balance * get_current_price)
+    (current_usd_balance + (current_btc_balance * get_current_price))
   end
 
 end
