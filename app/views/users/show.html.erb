@@ -1,8 +1,10 @@
 <h1>Welcome <%= @user.user_name %></h1>
-<p>USD balance: $<%= @user.current_usd_balance %></p>
+<p>USD balance: $<%= number_with_precision(@user.current_usd_balance, :precision => 2, :delimiter => ',') %></p>
 <p>BTC balance: <%= @user.current_btc_balance %></p>
 
-<p>Total Balance: $<%= @user.total_balance %> </p>
+<p>Total Balance: $<%= number_with_precision(@user.total_balance, :precision => 2, :delimiter => ',') %> </p>
+
+<p> Gain/Loss: %<%= number_with_precision((@user.total_balance/25000) - 1, :precision => 4, :delimiter => ',') %> </p>
 
 
 <script type="text/javascript">
@@ -61,15 +63,14 @@
   <% @transactions.each do |transaction|%>
     <tr>
       <td><%= transaction.id %></td>
-      <td><%= transaction.btc_total %></td>
-      <td>$<%= transaction.usd_total %></td>
-      <td><%= transaction.price %></td>
+      <td><%= number_with_precision(transaction.btc_total, :precision => 2, :delimiter => ',')  %></td>
+      <td>$<%= number_with_precision(transaction.usd_total, :precision => 2, :delimiter => ',')%></td>
+      <td>$<%= number_with_precision(transaction.price, :precision => 2, :delimiter => ',') %></td>
     </tr>
   <% end %>
 
 </table>
 
-<!-- <p><%= link_to "View All Transactions", edit_user_path(@user) %></p>  -->
 
 <p><%= link_to "Edit My Info", edit_user_path(@user) %></p> 
 

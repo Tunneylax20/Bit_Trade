@@ -12,7 +12,7 @@ class TransactionsController < ApplicationController
     # binding.pry
     @transaction.save
 
-    redirect_to user_transaction_path(@user, @transaction)
+    redirect_to user_path(@user)
   end
 
   def show
