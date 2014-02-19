@@ -6,7 +6,5 @@ class Transaction < ActiveRecord::Base
   validates :usd_total, presence: true
   validates :buy, presence: true
   validates :user_id, presence: true
-  # validates :usd_total, :numericality => { :greater_than => 0 }
-
   
 end

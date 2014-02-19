@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
 before_action :load_user, only: [:show, :edit, :update, :destroy]
 ### authenticate and authorize users for edit and update ###
-before_action :authenticate, :authorize, only: [:edit, :update]
+before_action :authenticate, :authorize, only: [:edit, :update, :show]
 
   def new
     @user = User.new
@@ -19,7 +19,7 @@ before_action :authenticate, :authorize, only: [:edit, :update]
   end
 
   def show
-    
+    @transactions = @user.transactions.all
   end
 
   def edit
@@ -50,9 +50,6 @@ before_action :authenticate, :authorize, only: [:edit, :update]
 
 ### reflects sign up form ###
   def user_params
-    # if params[:user][:money]==nil
-    #   params[:user][:money]=0
-    # end
     params.require(:user).permit(:email, :user_name, :password, :password_confirmation,)
   end
 

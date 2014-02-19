@@ -49,6 +49,26 @@
 
 </form>
 
+<table class="trxns">
+  <caption>Transaction History</caption>
+    <tr class="table_head"> 
+      <th>Transaction</th>
+      <th>BTC Quantity</th>
+      <th>USD Total</th>
+      <th>Price</th>
+    </tr>
+  
+  <% @transactions.each do |transaction|%>
+    <tr>
+      <td><%= transaction.id %></td>
+      <td><%= transaction.btc_total %></td>
+      <td>$<%= transaction.usd_total %></td>
+      <td><%= transaction.price %></td>
+    </tr>
+  <% end %>
+
+</table>
+
 <!-- <p><%= link_to "View All Transactions", edit_user_path(@user) %></p>  -->
 
 <p><%= link_to "Edit My Info", edit_user_path(@user) %></p> 
