@@ -7,18 +7,15 @@
 <body>
 <header>
 
-  <div id="nav">
-    <ul>
-      <li><%= link_to "Home", root_path %></li>
+  <div class="nav">
 
       <% if logged_in? %>
-        <li><%= link_to("Log Out #{current_user.user_name}", "/session", method: "delete") unless current_page?(root_path) %></li>  
+        <p id="login"><%= link_to("Log Out #{current_user.user_name}", "/session", method: "delete") unless current_page?(root_path) %></p>  
       <% else %>
-        <li><%= link_to("Log In","/login") unless current_page?(root_path) %></li>
+        <p id="login"><%= link_to("Log In","/login") unless current_page?(root_path) %></p>
       <% end %>
 
-      <li>Bitcoin Price: $<strong><%= get_current_price %></strong></li>
-    </ul>
+      <p id="price">Bitcoin Price: $<strong><%= get_current_price %></strong></p>
   </div>
 
 </header>

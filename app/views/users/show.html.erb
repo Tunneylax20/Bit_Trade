@@ -1,10 +1,10 @@
 <h1>Welcome <%= @user.user_name %></h1>
-<p>USD balance: $<%= number_with_precision(@user.current_usd_balance, :precision => 2, :delimiter => ',') %></p>
-<p>BTC balance: <%= @user.current_btc_balance %></p>
+<p class="homepage_menu">USD balance: $<%= number_with_precision(@user.current_usd_balance, :precision => 2, :delimiter => ',') %></p>
+<p class="homepage_menu">BTC balance: <%= @user.current_btc_balance %></p>
 
-<p>Total Balance: $<%= number_with_precision(@user.total_balance, :precision => 2, :delimiter => ',') %> </p>
+<p class="homepage_menu">Total Balance: $<%= number_with_precision(@user.total_balance, :precision => 2, :delimiter => ',') %> </p>
 
-<p> Gain/Loss: %<%= number_with_precision((@user.total_balance/25000) - 1, :precision => 4, :delimiter => ',') %> </p>
+<p class="homepage_menu"> Gain/Loss: %<%= number_with_precision((@user.total_balance/25000) - 1, :precision => 4, :delimiter => ',') %> </p>
 
 
 <script type="text/javascript">
@@ -28,22 +28,22 @@
   <label>
     Sell:  
     <input type="radio" name="buy" value="1"/>   
-  </label> <br>
+  </label> <br><br>
 
   <label>
     QTY: 
     <input id="qty" type="integer" name="btc_total" value="1" onkeyup="updateTotal()"/>
-  </label> <br>
+  </label> <br><br>
 
   <label>
     Current Price:
     <input id="current_price" type="integer" name="price" value=<%=get_current_price%> readonly="true"/>
-  </label> <br>
+  </label> <br><br>
 
   <label>
     Total: 
     <input id="total" type="text" name="usd_total" readonly="true" value=<%=get_current_price%> />
-  </label><br>
+  </label><br><br>
 
   <button>Submit Transaction</button>
   
@@ -51,7 +51,7 @@
 
 </form>
 
-<table class="trxns">
+<table width= "50%" class="trxns">
   <caption>Transaction History</caption>
     <tr class="table_head"> 
       <th>Transaction</th>
@@ -72,8 +72,10 @@
 </table>
 
 
-<p><%= link_to "Edit My Info", edit_user_path(@user) %></p> 
+<p id="button"><%= link_to "Edit My Info", edit_user_path(@user) %></p> 
 
-<%= form_tag user_path(@user), method: "delete" do %>
-  <%= submit_tag("Delete My Account") %>
-<% end %>
+<p> 
+  <%= form_tag user_path(@user), method: "delete" do %>
+    <%= submit_tag("Delete My Account") %>
+  <% end %>
+</p>

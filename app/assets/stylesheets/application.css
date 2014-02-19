@@ -1,40 +1,47 @@
 body {
   background-image: url("http://www.colorhexa.com/static/i/linen.png");
+  font-family: Georgia, 'times new roman', times, serif;
 }
 
-#nav ul {
+.nav {
   background-color: white;
-  margin: 10px;
+  margin: 0px;
   padding: 10px;
 }
-#nav li {
-  display: inline;
-  padding-right: 50px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
 
-table, th {
-  padding: 20px;
-}
-
-table, td {
-  text-align: center;
+#login {
+  float: right;
 }
 
 table,th, td {
   border: 1px solid black;
-}
-
-td
-{
-  padding:50px;
+  text-align: center;
 }
 
 
+.coinbase {
+ text-align: center;
+}
 
+.user_panel {
+  text-align: center;
+}
 
+.welcome {
+  text-align: center;
+}
 
+iframe {
+  margin-left: 50px;
+}
 
+.login_form {
+  text-align: center;
+}
+
+.homepage_menu {
+  text-align: left;
+}
 
 
 
