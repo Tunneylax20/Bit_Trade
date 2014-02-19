@@ -8,10 +8,8 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    # btc_total = params[:btc_total].to_i - 1
-    # @transaction = Transaction.new({:price => params[:price], :btc_total => btc_total, :usd_total => params[:usd_total], :buy => params[:buy], :user_id => params[:user_id]})
-    # @transaction.save
     @transaction = Transaction.new(:price => @price, :btc_total => @btc_total, :usd_total => @usd_total, :buy => @buy, :user_id => @user_id)
+    # binding.pry
     @transaction.save
 
     redirect_to user_transaction_path(@user, @transaction)
@@ -51,8 +49,13 @@ class TransactionsController < ApplicationController
       redirect_to user_path(@user)
     end
 
-    if @usd_total <= 0
-      flash[:error] = "Invalid Entry"
+    if -@usd_total <= 0 && @btc_total > 0
+      flash[:error] = "Invalid Entry, but nice try"
+      redirect_to user_path(@user)
+    end
+
+    if @usd_total <= 0 && @btc_total < 0
+      flash[:error] = "Invalid Entry, but nice try"
       redirect_to user_path(@user)
     end
 

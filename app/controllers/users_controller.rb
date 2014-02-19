@@ -19,6 +19,7 @@ before_action :authenticate, :authorize, only: [:edit, :update]
   end
 
   def show
+    
   end
 
   def edit
