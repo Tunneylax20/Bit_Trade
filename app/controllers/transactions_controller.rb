@@ -51,5 +51,10 @@ class TransactionsController < ApplicationController
       redirect_to user_path(@user)
     end
 
+    if @usd_total <= 0
+      flash[:error] = "Invalid Entry"
+      redirect_to user_path(@user)
+    end
+
   end
 end
