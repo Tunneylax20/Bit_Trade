@@ -1,39 +1,16 @@
-# Title
+# Bit Trade
 
 ## GA WDI NYC Jan '14, Project 1
 
-### Description
+### Bit Trade is a mock Bitcoin trading platform. Users start with $25,000 and can trade between Bitcoin and USD using the Bitstamp price for Bitcoin. 
 
 #### Gems, API's + Libraries used
 
-### User Stories (link to pivotal tracker)
+##### Bitstamp API 
+##### https://www.bitstamp.net/api/
 
 
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### User Stories (https://www.pivotaltracker.com/s/projects/1015902)
 
 
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
