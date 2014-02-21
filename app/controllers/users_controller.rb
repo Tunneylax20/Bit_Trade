@@ -20,6 +20,7 @@ before_action :authenticate, :authorize, only: [:edit, :update, :show]
 
   def show
     @transactions = @user.transactions.all
+
   end
 
   def edit
@@ -64,5 +65,6 @@ before_action :authenticate, :authorize, only: [:edit, :update, :show]
       redirect_to login_path
     end
   end
+
 
 end

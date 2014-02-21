@@ -17,39 +17,7 @@
   }
 </script>
 
-<form action="/users/<%= @user.id %>/transactions" method="POST">
-<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-
-  <label>
-    Buy: 
-    <input type="radio" name="buy" value="0" checked="true"/>   
-  </label> <br>
-
-  <label>
-    Sell:  
-    <input type="radio" name="buy" value="1"/>   
-  </label> <br><br>
-
-  <label>
-    QTY: 
-    <input id="qty" type="integer" name="btc_total" value="1" onkeyup="updateTotal()"/>
-  </label> <br><br>
-
-  <label>
-    Current Price:
-    <input id="current_price" type="integer" name="price" value=<%=get_current_price%> readonly="true"/>
-  </label> <br><br>
-
-  <label>
-    Total: 
-    <input id="total" type="text" name="usd_total" readonly="true" value=<%=get_current_price%> />
-  </label><br><br>
-
-  <button>Submit Transaction</button>
-  
-  <p><%= flash[:error] %></p>
-
-</form>
+<%= render "transaction_form" %>
 
 <div class="table">
   <table width= "50%" class="trxns">

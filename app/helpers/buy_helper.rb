@@ -1,20 +1,4 @@
-class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-
-  def current_user
-    User.find_by(id: session[:user_id])
-  end
-
-  def logged_in?
-    current_user.present?
-  end
-
-  def get_current_price
-    from_bitstamp = HTTParty.get("https://www.bitstamp.net/api/ticker/")
-    return from_bitstamp["last"]
-  end
+module BuyHelper
 
   def buy_sell_logic
       @price = params[:price].to_i
@@ -50,7 +34,5 @@ class ApplicationController < ActionController::Base
       end
 
     end
-
-  helper_method :current_user, :logged_in?, :get_current_price
 
 end
