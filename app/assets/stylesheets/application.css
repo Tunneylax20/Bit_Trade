@@ -22,6 +22,7 @@ ul#price {
 
 li#price_nav{
   display: inline-block;
+  padding: 10px, 50px, 10px, 50px;
 }
 
 table {
