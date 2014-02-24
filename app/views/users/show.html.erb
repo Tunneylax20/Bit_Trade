@@ -15,6 +15,15 @@
     
     document.getElementById('total').value = quantity * current_price ; 
   }
+
+  function updatedogeTotal(){
+
+    var quantity = document.getElementById('qty').value;
+    var current_price = document.getElementById('current_price').value;
+    
+    document.getElementById('total').value = quantity * doge_price_btc ; 
+  }
+
 </script>
 
 <%= render "btc_buy_form" %>
