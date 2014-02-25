@@ -16,14 +16,6 @@ ActiveRecord::Schema.define(version: 20140224110140) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accounts", force: true do |t|
-    t.decimal  "usd",        default: 25000.0
-    t.decimal  "btc"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "transactions", force: true do |t|
     t.decimal  "price"
     t.decimal  "btc_total"

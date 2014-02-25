@@ -46,14 +46,18 @@ end
 
 gem 'httparty'
 
-gem 'pry-rails'
-
-gem 'omniauth-facebook'
-
-gem 'omniauth'
-
 gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'rails_12factor', group: :production
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+end
 
 ruby "2.1.0"

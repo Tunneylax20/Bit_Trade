@@ -59,9 +59,8 @@ iframe {
   text-align: center;
 }
 
-.homepage_menu {
-/*  text-align: left;
-  display: inline-block;*/
+#doge_form{
+  float: right;
 }
 
 
