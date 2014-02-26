@@ -35,6 +35,7 @@
     <caption>Transaction History</caption><br>
       <tr class="table_head"> 
         <th>BTC Quantity</th>
+        <th>DOGE Quantity</th>
         <th>USD Total</th>
         <th>Price</th>
       </tr>
@@ -42,6 +43,7 @@
     <% @transactions.each do |transaction|%>
       <tr>
         <td><%= number_with_precision(transaction.btc_total, :precision => 2, :delimiter => ',')  %></td>
+        <td><%= number_with_precision(transaction.doge, :precision => 2, :delimiter => ',')  %></td>
         <td>$<%= number_with_precision(transaction.usd_total, :precision => 2, :delimiter => ',')%></td>
         <td>$<%= number_with_precision(transaction.price, :precision => 2, :delimiter => ',') %></td>
       </tr>

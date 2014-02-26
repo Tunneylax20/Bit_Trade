@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
     self.btc + Transaction.where(user: self).sum('btc_total').to_f
   end
 
+  # def current_doge_balance
+  #   self.doge + Transaction.where(user: self).sum('doge').to_f
+  # end
+
   def get_current_price
     from_bitstamp = HTTParty.get("https://www.bitstamp.net/api/ticker/")
     return from_bitstamp["last"].to_f
