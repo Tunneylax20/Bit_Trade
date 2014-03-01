@@ -15,17 +15,17 @@
 
   <label>
     QTY: 
-    <input id="qty" type="integer" name="doge_total" value="1000" onkeyup="updatedogeTotal()"/>
+    <input id="doge_qty" type="integer" name="doge_total" value="1000" onkeyup="updateTotal()"/>
   </label> <br><br>
 
   <label>
     Current Price:
-    <input id="current_price" type="integer" name="price" value=<%=doge_price_usd%> readonly="true"/>
+    <input id="doge_current_price" type="integer" name="price" value=<%=doge_price_usd%> readonly="true"/>
   </label> <br><br>
 
   <label>
     Total: 
-    <input id="total" type="text" name="usd_total" readonly="true" value=<%=doge_price_usd%> />
+    <input id="doge_total" type="text" name="usd_total" readonly="true" value=<%=doge_price_usd%> />
   </label><br><br>
 
   <button>Buy/Sell Doge</button>
