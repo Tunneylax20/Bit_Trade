@@ -43,7 +43,7 @@
     <% @transactions.each do |transaction|%>
       <tr>
         <td><%= number_with_precision(transaction.btc_total, :precision => 2, :delimiter => ',')  %></td>
-        <td><%= number_with_precision(transaction.doge, :precision => 2, :delimiter => ',')  %></td>
+        <td><%= number_with_precision(transaction.doge_total, :precision => 2, :delimiter => ',')  %></td>
         <td>$<%= number_with_precision(transaction.usd_total, :precision => 2, :delimiter => ',')%></td>
         <td>$<%= number_with_precision(transaction.price, :precision => 2, :delimiter => ',') %></td>
       </tr>

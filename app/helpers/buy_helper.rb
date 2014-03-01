@@ -4,13 +4,22 @@ module BuyHelper
       @price = params[:price].to_i
       @buy = params[:buy].to_i
       @user_id = params[:user_id]
+      @btc_total = params[:btc_total].to_i
+      @usd_total = params[:usd_total].to_i
+      @doge_total = params[:doge_total].to_i
 
-      if @buy == 0
-        @usd_total = params[:usd_total].to_i * (-1)
-        @btc_total = params[:btc_total].to_i
+
+
+      if (@buy == 0) && (@btc_total != 0)
+        @usd_total = @usd_total * (-1)
       else 
-        @usd_total = params[:usd_total].to_i
-        @btc_total = params[:btc_total].to_i * (-1)
+        @btc_total = @btc_total * (-1)
+      end
+
+      if (@buy == 0) && (@doge_total != 0)
+        @usd_total = params[:usd_total].to_i * (-1)
+      else 
+        @doge_total = params[:doge_total].to_i * (-1)
       end
 
       ### check USD balance to clear transaction ###

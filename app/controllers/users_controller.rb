@@ -11,8 +11,10 @@ before_action :authenticate, :authorize, only: [:edit, :update, :show]
   def create
     @user = User.new(user_params)
 
+
     if @user.save
       redirect_to user_path(@user)
+      session[:user_id] = @user.id
     else
       render(:new)
     end
