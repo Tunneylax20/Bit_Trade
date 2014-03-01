@@ -1,6 +1,7 @@
 <h1>Welcome <%= @user.user_name %></h1>
 <p class="homepage_menu">USD balance: $<%= number_with_precision(@user.current_usd_balance, :precision => 2, :delimiter => ',') %></p>
 <p class="homepage_menu">BTC balance: <%= @user.current_btc_balance %></p>
+<p class="homepage_menu">Doge Balance: <%= @user.current_doge_balance %></p>
 
 <p class="homepage_menu">Total Balance: $<%= number_with_precision(@user.total_balance, :precision => 2, :delimiter => ',') %> </p>
 

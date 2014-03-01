@@ -34,6 +34,11 @@ module BuyHelper
         redirect_to user_path(@user)
       end
 
+      if -@doge_total > @user.current_doge_balance
+        flash[:error] = "Can't sell Bitcoins you don't have!"
+        redirect_to user_path(@user)
+      end
+
       ### protecting against unknown characters ###
       if -@usd_total <= 0 && @btc_total > 0
         flash[:error] = "Invalid Entry, but nice try"
@@ -41,6 +46,16 @@ module BuyHelper
       end
 
       if @usd_total <= 0 && @btc_total < 0
+        flash[:error] = "Invalid Entry, but nice try"
+        redirect_to user_path(@user)
+      end
+
+      if -@usd_total <= 0 && @doge_total > 0
+        flash[:error] = "Invalid Entry, but nice try"
+        redirect_to user_path(@user)
+      end
+
+      if @usd_total <= 0 && @doge_total < 0
         flash[:error] = "Invalid Entry, but nice try"
         redirect_to user_path(@user)
       end
