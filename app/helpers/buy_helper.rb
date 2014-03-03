@@ -1,13 +1,12 @@
 module BuyHelper
 
   def buy_sell_logic
-      @price = params[:price].to_i
-      @buy = params[:buy].to_i
-      @user_id = params[:user_id]
-      @btc_total = params[:btc_total].to_i
-      @usd_total = params[:usd_total].to_i
-      @doge_total = params[:doge_total].to_i
-
+      @price = params[:price].to_f
+      @buy = params[:buy].to_f
+      @user_id = params[:user_id].to_f
+      @btc_total = params[:btc_total].to_f
+      @usd_total = params[:usd_total].to_f
+      @doge_total = params[:doge_total].to_f
 
 
       if (@buy == 0) && (@btc_total != 0)
