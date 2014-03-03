@@ -1,6 +1,6 @@
 body {
   background-image: url("http://www.colorhexa.com/static/i/linen.png");
-  font-family: Georgia, 'times new roman', times, serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .nav {
@@ -20,7 +20,7 @@ ul#price {
   list-style-type: none;
 }
 
-#price_nav{
+#price{
   display: inline-block;
   padding: 10px, 50px, 10px, 50px;
 }

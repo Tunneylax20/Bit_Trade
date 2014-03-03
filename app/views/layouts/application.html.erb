@@ -3,12 +3,12 @@
 <head>
   <title>BitTrade</title>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </head>
 <body>
 <header>
 
   <div class="nav">
-
       <% if logged_in? %>
         <p id="login"><%= link_to("Log Out #{current_user.user_name}", "/session", method: "delete") unless current_page?(root_path) %></p>  
       <% else %>
@@ -16,8 +16,8 @@
       <% end %>
 
       <ul id="price">
-        <li id="price_nav"> BTC: $<strong><%= get_current_price %></strong></li>
-        <li id="price_nav"> DOGE(1,000): $<strong><%= doge_price_usd %></strong></li>
+        BTC: <li id="price">$<%= get_current_price %></li>
+        DOGE(1,000): <li id="price">$<%= doge_price_usd %></li>
       </ul>
 
       

@@ -15,3 +15,12 @@
 //= require turbolinks
 //= require_tree .
 
+  function updateTotal(){
+
+    var quantity = document.getElementById('qty').value;
+    var current_price = document.getElementById('current_price').value;
+    
+    document.getElementById('total').value = quantity * current_price ; 
+  }
+
+
