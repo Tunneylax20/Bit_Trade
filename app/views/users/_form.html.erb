@@ -1,22 +1,25 @@
   <div class="login_form">
+    <div class="login_fields">
+      <%= form_for @user do |f| %>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
 
-    <%= form_for @user do |f| %>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-    <br/>
+    <div class="login_fields">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <br/>
+    <div class="login_fields">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
 
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-    <br/>
-
-
-    <%= f.label :Username %>
-    <%= f.text_field :user_name %>
-    <br/>
+    <div class="login_fields">
+      <%= f.label :Username %>
+      <%= f.text_field :user_name %>
+    <div/>
+    
 
     <%= f.submit @user.id.nil? ? "Create Account" : "Save Changes" %>
 
