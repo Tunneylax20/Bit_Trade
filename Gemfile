@@ -55,6 +55,8 @@ gem 'rails_12factor', group: :production
 
 gem 'simplecov', :require => false, :group => :test
 
+gem 'normalize-rails'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'

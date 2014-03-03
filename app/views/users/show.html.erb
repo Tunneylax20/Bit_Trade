@@ -1,4 +1,4 @@
-<ul>
+<ul class="balance">
   <li>USD balance: <%= number_to_currency(@user.current_usd_balance) %></li>
   <li>BTC balance: <%= number_with_precision(@user.current_btc_balance, :delimiter => ',') %></li>
   <li>Doge Balance: <%= @user.current_doge_balance %></li>
@@ -8,7 +8,13 @@
 
 <%= render "btc_buy_form" %>
 <%= render "doge_buy_form" %>
-
 <%= render "transaction_history" %>
 
-<%= render "edit_delete" %>
+<p id="button"><%= link_to "Edit My Info", edit_user_path(@user) %></p> 
+
+<p> 
+  <%= csrf_meta_tag %>
+  <%= form_tag user_path(@user), method: "delete" do %>
+    <%= submit_tag("Delete My Account") %>
+  <% end %>
+</p>
