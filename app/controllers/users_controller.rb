@@ -21,7 +21,7 @@ before_action :authenticate, :authorize, only: [:edit, :update, :show]
   end
 
   def show
-    @transactions = @user.transactions.all
+    @transactions = @user.transactions.load
 
   end
 

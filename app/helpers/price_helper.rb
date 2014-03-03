@@ -9,7 +9,4 @@ module PriceHelper
     return from_bitstamp["last"]
   end
 
-
-
-
 end
