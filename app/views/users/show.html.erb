@@ -1,9 +1,10 @@
 <ul class="balance">
-  <li>USD balance: <%= number_to_currency(@user.current_usd_balance) %></li>
-  <li>BTC balance: <%= number_with_precision(@user.current_btc_balance, :delimiter => ',') %></li>
-  <li>Doge Balance: <%= @user.current_doge_balance %></li>
-  <li>Total Balance: $<%= number_with_precision(@user.total_balance, :delimiter => ',') %> </li>
-  <li>Gain/Loss: %<%= number_with_precision((@user.total_balance/25000) - 1) %> </li>
+  <li><%= @user.user_name %>'s Portfolio</li>
+  <li>USD: <%= number_to_currency(@user.current_usd_balance) %></li>
+  <li>BTC: <%= number_with_precision(@user.current_btc_balance, :delimiter => ',') %></li>
+  <li>Doge: <%= @user.current_doge_balance %></li>
+  <li>Market Value: $<%= number_with_precision(@user.total_balance, :delimiter => ',') %> </li>
+  <li>Gain: %<%= number_with_precision((@user.total_balance/25000) - 1) %> </li>
 </ul>
 
 <%= render "btc_buy_form" %>

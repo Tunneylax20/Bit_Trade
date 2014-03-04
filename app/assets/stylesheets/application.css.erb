@@ -6,8 +6,10 @@
 
 body {
   background-image: url(<%= asset_path 'test.png' %>);
-  font-family: Helvetica;
+  font-family: 'Open Sans', sans-serif;
 }
+
+/*Top Nav Bar*/
 
 .nav {
   background-color: #040301;
@@ -17,7 +19,7 @@ body {
   color: #3BB05A;
   font-weight: 600;
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
+
 
 }
 
@@ -31,12 +33,17 @@ body {
   display: inline-block;
   padding-right: 5em;
 }
+
+/*Links*/
+
 a:link {
   color: #1C5430;
 }
 a:visited {
-  color: #3BB05A;
+  color: #1C5430;
 }
+
+/*Transactions Table*/
 
 table {
   margin-left: auto;
@@ -48,14 +55,11 @@ table, th {
   text-align: center;
 }
 
+/*Coinbase Donation Button*/
 
 .coinbase {
  text-align: center;
  padding-top: 5em;
-}
-
-.user_panel {
-  text-align: center;
 }
 
 .welcome {
@@ -66,6 +70,8 @@ iframe {
   margin-left: 50px;
 }
 
+/*Login Form*/
+
 .login_form {
   margin: 0 auto;
   width: 100px;
@@ -73,7 +79,13 @@ iframe {
   font-size: 14px;
 }
 
-.login_form input[type="submit"] {
+.login_fields {
+  padding: 0.5em;
+}
+
+/*Login Form Button*/
+
+/*.login_form input[type="submit"] {
   color: #3BB05A;
   background-color: #040301;
   border-top: 1px solid #040301;
@@ -86,11 +98,27 @@ iframe {
   margin: 15px 30px 30px 30px;
   font-size: 14px;
   line-height: 14px;
+}*/
 
-  /*box-shadow: inset 0 -3px 0 #55988d;*/
+/*Welcome Links*/
+
+.user_panel {
+  text-align: center;
+  font-size: 1.3em;
+  padding: 1em;
+  font-weight: 600;
 }
 
-.login_fields {
-  padding: 0.5em;
+/*User Balance*/
+
+.balance {
+  list-style-type: none;
+  /*display: inline-block;*/
+}
+
+.balance li{
+  display: inline-block;
+  font-size: .9em;
+  padding: 2em;
 }
 

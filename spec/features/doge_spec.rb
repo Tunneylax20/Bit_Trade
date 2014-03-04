@@ -8,13 +8,15 @@ describe "a user can buy doge coin" do
     visit "/login"
     fill_in :email, with: user.email
     fill_in :password, with: user.password
-    click_button "Log in!"
+    click_button "Log in"
 
     visit user_path(user)
 
     within ".buy_doge" do
       expect(page).to have_content "Buy/Sell Doge"
     end
+
+    click_link "Log Out #{user.user_name}"
 
     # click_button("Buy/Sell Doge") 
     # within ".table" do
