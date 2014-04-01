@@ -23,4 +23,18 @@
     document.getElementById('total').value = quantity * current_price ; 
   }
 
+$(document).ready(updateDoge())
+
+function updateDoge() {
+ $('#doge_qty').on('keyup', function() {
+    var quantity = $('#doge_qty').val();
+      console.log(quantity);
+      var current_price = $('#doge_current_price').val();
+      console.log(current_price);
+      $('#doge_total_dollars').val() = quantity * current_price;
+ })
+};
+      
+
+
 

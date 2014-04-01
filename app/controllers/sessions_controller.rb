@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
       # save the user_id in the session hash
       session[:user_id] = user.id
 
+
       # and redirect to that user's home page
       redirect_to( user_path(user) )
     else

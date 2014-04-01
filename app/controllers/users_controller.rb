@@ -13,8 +13,8 @@ before_action :authenticate, :authorize, only: [:edit, :update, :show]
 
 
     if @user.save
-      redirect_to user_path(@user)
       session[:user_id] = @user.id
+      redirect_to user_path(@user)
     else
       render(:new)
     end
