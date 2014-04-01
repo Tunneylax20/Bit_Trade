@@ -5,7 +5,7 @@
 ## GA WDI NYC Jan '14, Project 1
 
 
-Bit Trade is a mock Bitcoin trading platform. Users start with $25,000 and can trade between Bitcoin and USD using the Bitstamp price for Bitcoin. 
+Bit Trade is a Bitcoin trading simulator. Users start with $25,000 and can trade between Bitcoin and USD using the BitStamp market price. 
 
 
 #### Technologies Used
@@ -15,7 +15,7 @@ Bit Trade is a mock Bitcoin trading platform. Users start with $25,000 and can t
 * PostgreSQL
 * Authentication & Authorization using [BCrypt](https://bcrypt-ruby.rubyforge.org/ "Bcrypt")
 * [Bitstamp API](https://www.bitstamp.net/api/ "Bitstamp API") and [HTTParty](https://github.com/jnunemaker/httparty)
-* 
+
 
 ### User Stories
 * [Pivotal Tracker](https://www.pivotaltracker.com/s/projects/1015902)
@@ -26,4 +26,3 @@ Bit Trade is a mock Bitcoin trading platform. Users start with $25,000 and can t
 * Multiple curriencies 
   * Dogecoin
   * Litecoin
-  * Eur
