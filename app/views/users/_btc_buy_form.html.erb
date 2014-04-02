@@ -1,6 +1,6 @@
-<form class ="buy_btc" action="/users/<%= @user.id %>/transactions" method="POST">
+<form class ="buy" action="/users/<%= @user.id %>/transactions" method="POST">
 <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-
+<h3>Buy Bitcoin</h3>
   <label>
     Buy: 
     <input type="radio" name="buy" value="0" checked="true"/>   
@@ -19,7 +19,7 @@
   </label> <br><br>
 
   <label>
-    Current Price:
+    Price:
     <input id="current_price" type="integer" name="price" value= <%=get_current_price%> readonly="true"/>
   </label> <br><br>
 
