@@ -1,11 +1,10 @@
 /*
-*= require_self
 *= require normalize-rails
+*= require_self
 *= require_tree .
 */
 
 body {
-  /*background-image: url(<%= asset_path 'test.png' %>);*/
   background-color: #fafafa;
   font-family: 'Open Sans', sans-serif;
 }
@@ -55,6 +54,16 @@ table, th {
   border: 1px solid black;
   text-align: center;
 }
+
+tr th {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+tr {
+  line-height: 2em;
+}
+
 
 /*Coinbase Donation Button*/
 
@@ -126,17 +135,23 @@ iframe {
 /* BTC + DOGE buy/sell */
 
 .buy {
-  border: 5px solid blue;
   text-align: center;
   width: 20em;
   display: inline-block;
   margin-left: 2em;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .buy input{
   width: 8em;
   display: inline;
   border-radius: 0.5em;
+}
+
+.buy button{
+  border-radius: 0.5em;
+  color: #3BB05A;
+  background-color: black;
 }
 
 
