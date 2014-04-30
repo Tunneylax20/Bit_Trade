@@ -1,7 +1,11 @@
 module PriceHelper
 
   def doge_price_usd
-    return HTTParty.get("https://www.dogeapi.com/wow/?a=get_current_price&convert_to=USD&amount_doge=1").round(4)
+    
+    response = HTTParty.get("https://www.dogeapi.com/wow/v2/?a=get_current_price&convert_to=USD")
+    doge = response["data"]["amount"].round(4)
+    return doge
+
   end
 
   def get_current_price
