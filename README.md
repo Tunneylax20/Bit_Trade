@@ -5,7 +5,7 @@
 ## GA WDI NYC Jan '14, Project 1
 
 
-Bit Trade is a Bitcoin trading simulator. Users start with $25,000 and can trade between Bitcoin and USD using the BitStamp market price. 
+Bit Trade is a Bitcoin and Dogecoin trading simulator. Users start with $25,000 and can trade between Bitcoin, Dogecoin and USD using the current Bitcoin and Dogecoin prices. 
 
 
 #### Technologies Used
@@ -13,8 +13,9 @@ Bit Trade is a Bitcoin trading simulator. Users start with $25,000 and can trade
 * Ruby 2.1
 * Ruby on Rails 4.0.2
 * PostgreSQL
+* JavaScript
 * Authentication & Authorization using [BCrypt](https://bcrypt-ruby.rubyforge.org/ "Bcrypt")
-* [Bitstamp API](https://www.bitstamp.net/api/ "Bitstamp API") and [HTTParty](https://github.com/jnunemaker/httparty)
+* [Bitstamp API](https://www.bitstamp.net/api/ "Bitstamp API"), [Doge API](https://www.dogeapi.com/"Doge API") and [HTTParty](https://github.com/jnunemaker/httparty)
 
 
 ### User Stories
