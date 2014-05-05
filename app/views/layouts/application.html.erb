@@ -8,11 +8,11 @@
 <body>
 <header>
 <div class="container">
-  <div class="navbar navbar-default">
+  <div class="navbar navbar-default blue-background">
    <% if logged_in? %>
-      <p id="login"><%= link_to("Log Out #{current_user.user_name}", "/session", method: "delete") unless current_page?(root_path) %></p>  
+      <span id="login"><%= link_to("Log Out #{current_user.user_name}", "/session", method: "delete") unless current_page?(root_path) %></span>  
     <% else %>
-      <p id="login"><%= link_to("Log In","/login") unless current_page?(root_path) %></p>
+      <span id="login"><%= link_to("Log In","/login") unless current_page?(root_path) %></span>
     <% end %>
 
       <span>Bitcoin Price: $<%= get_current_price %></span>
