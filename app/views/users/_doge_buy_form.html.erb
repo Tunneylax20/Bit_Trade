@@ -1,36 +1,38 @@
 <form action="/users/<%= @user.id %>/transactions" method="POST">
 <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-<h3>Buy DOGE</h3>
-  <label>
-    Buy: 
-    <input type="radio" name="buy" value="0" checked="true"/>   
-  </label> <br>
+  <div class="form-group">
+  <h3>Buy Doge</h3>
+    <label>
+      Buy: 
+      <input type="radio" name="buy" value="0" checked="true"/>   
+    </label> <br>
 
-  <label>
-    Sell:  
-    <input type="radio" name="buy" value="1"/>   
-  </label> <br><br>
+    <label>
+      Sell:  
+      <input type="radio" name="buy" value="1"/>   
+    </label> <br><br>
 
-  <input type="hidden" name="btc_total" value="0" />
+    <input type="hidden" name="btc_total" value="0" />
 
-  <label>
-    QTY: 
-    <input class="form-control" id="doge_qty" type="integer" name="doge_total" value="1000" onkeyup="updateDoge()"/>
-  </label> <br><br>
+    <label>
+      QTY: 
+      <input class="form-control" id="doge_qty" type="integer" name="doge_total" value="1000" onkeyup="updateDoge()"/>
+    </label> <br><br>
 
-  <label>
-    Price:
-    <input class="form-control" id="doge_current_price" type="integer" name="price" value=<%=doge_price_usd%> readonly="true"/>
-  </label> <br><br>
+    <label>
+      Price:
+      <input class="form-control" id="doge_current_price" type="integer" name="price" value=<%=doge_price_usd%> readonly="true"/>
+    </label> <br><br>
 
-  <label>
-    Total: 
-    <input class="form-control" id="doge_total_dollars" type="text" name="usd_total" readonly="true" value=<%=doge_price_usd * 1000%> />
-  </label><br><br>
+    <label>
+      Total: 
+      <input class="form-control" id="doge_total_dollars" type="text" name="usd_total" readonly="true" value=<%=doge_price_usd * 1000%> />
+    </label><br><br>
 
-  <button class="btn btn-primary">Place Doge Order</button>
-  
-  <p><%= flash[:error] %></p>
+    <button class="btn btn-primary">Place Doge Order</button>
+    
+    <p><%= flash[:error] %></p>
+  </div>
 
 </form>
 
