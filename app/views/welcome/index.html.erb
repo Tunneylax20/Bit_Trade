@@ -1,9 +1,16 @@
 
-<div class="container">
-  <h1>Bit Trade</h1>
+<div class="container welcome">
+  <h1 class="title">Bit Trade</h1>
+  <h4 class="subtitle">Bit Trade is a Bitcoin and DogeCoin Simulator. You start with $25,000 and can purchase Bitcoin and DogeCoin.</h4>
 
-  <div class="btn btn-default btn-lg"><%= link_to "Create Account", new_user_path %> </div>
-  <div class="btn btn-default btn-lg"><%= link_to "Login", "/login" %> </div>
+  <div class="row">
+    <div class="welcome-button col-md-3 col-md-offset-4">
+      <div class="btn btn-default btn-lg btn-block"><%= link_to "Start Trading Now", new_user_path %> </div>
+    </div>
+  </div>
+<!--   <div class="welcome-button">
+    <div class="btn btn-default btn-lg"><%= link_to "Login", "/login" %> </div>
+  </div> -->
 </div>
 
 <!-- <div class="coinbase">

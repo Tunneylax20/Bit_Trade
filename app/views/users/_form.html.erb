@@ -5,35 +5,35 @@
       <%= form_for @user do |f| %>
 
       <div class="form-group">
-        <div class="col-xs-3">
+        <div class="col-md-3 col-md-offset-4">
           <%= f.label :email %>
           <%= f.email_field :email, :class=> "form-control" %>
         </div>
       </div>
 
       <div class="form-group">
-        <div class="col-xs-3">
+        <div class="col-md-3 col-md-offset-4">
           <%= f.label :password %>
           <%= f.password_field :password, :class=> "form-control" %>
         </div>
       </div>
     
       <div class="form-group">
-        <div class="col-xs-3">
+        <div class="col-md-3 col-md-offset-4">
           <%= f.label :password_Confirmation %>
           <%= f.password_field :password_confirmation, :class=> "form-control" %>
         </div>
       </div>
 
       <div class="form-group">
-        <div class="col-xs-3">
+        <div class="col-md-3 col-md-offset-4">
           <%= f.label :Username %>
           <%= f.text_field :user_name, :class=> "form-control" %>
         </div>
       </div>
 
       <div class="form-group">
-        <div class="col-xs-3">
+        <div class="col-md-3 col-md-offset-4">
           <%= f.submit @user.id.nil? ? "Create Account" : "Save Changes", :class=> "form-control" %>
         </div>
       </div>

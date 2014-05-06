@@ -7,19 +7,31 @@
   </div>
 <% end %>
 
-<div class="login_form"><%= form_tag "/session" do %>
-  <div class="login_fields">
-    <%= label_tag :email %>
-    <%= email_field_tag :email %>
+<div class="container">
+  <div class="form-horizontal">
+
+  <%= form_tag "/session" do %>
+  <div class="form-group">
+    <div class="col-md-3 col-md-offset-4">
+      <%= label_tag :email %>
+      <%= email_field_tag :email %>
+    </div>
   </div>
 
-  <div class="login_fields">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+  <div class="form-group">
+    <div class="col-md-3 col-md-offset-4">
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-md-3 col-md-offset-4">
+      <%= submit_tag "Log in", :class=> "form-control" %>
+    </div>
   </div>
 
-  <%= submit_tag "Log in" %>
+      <% end %>
 
-<% end %>
-
+  </div>
 </div>
