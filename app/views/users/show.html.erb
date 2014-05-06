@@ -8,34 +8,13 @@
     <span class="col-md-2"><strong>Gain</strong>: %<%= number_with_precision((@user.total_balance/25000) - 1) %> </span>
   </div>
   <div class="row">
-    <div class="panel-group" id="accordion">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-            Buy Bitcoin
-            </a>
-          </h4>
-        </div>
-        <div id="collapseOne" class="panel-collapse collapse in">
-          <div class="panel-body">
-             <div class="col-md-6"><%= render "btc_buy_form" %></div>
-          </div>
-        </div>
-      </div>
-      <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-        Buy Doge
-       </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse">
-      <div class="panel-body">
-          <div class="col-md-6"><%= render "doge_buy_form"%></div>
-        </div>
-      </div>
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#buy-btc" data-toggle="tab">Buy Bitcoin</a></li>
+      <li><a href="#buy-doge" data-toggle="tab">Buy Doge</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active col-md-6" id="buy-btc"><%= render "btc_buy_form" %></div>
+      <div class="tab-pane col-md-6" id="buy-doge"><%= render "doge_buy_form"%></div>
     </div>
   </div>
   <%= render "transaction_history" %>
