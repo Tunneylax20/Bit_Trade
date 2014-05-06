@@ -7,18 +7,23 @@
 </head>
 <body>
 <header>
-<div class="container">
   <div class="navbar navbar-default blue-background">
-   <% if logged_in? %>
-      <span id="login"><%= link_to("Log Out #{current_user.user_name}", "/session", method: "delete") unless current_page?(root_path) %></span>  
-    <% else %>
-      <span id="login"><%= link_to("Log In","/login") unless current_page?(root_path) %></span>
-    <% end %>
+    <div class="ticker-wrapper">
+      <span class="ticker">Bitcoin Price: </span> <span class="price"> $<%= get_current_price %></span>
+    </div>
+    <div class="ticker-wrapper">
+      <span class="ticker">Doge Price: </span> <span class="price"> $<%= doge_price_usd %></span>
+    </div>
 
-      <span>Bitcoin Price: $<%= get_current_price %></span>
-      <span>Doge Price: $<%= doge_price_usd %></span>
+    <div class="login">
+      <% if logged_in? %>
+        <span><%= link_to("Log Out #{current_user.user_name}", "/session", method: "delete") unless current_page?(root_path) %></span>  
+      <% else %>
+        <span><%= link_to("Log In","/login") unless current_page?(root_path) %></span>
+      <% end %>
+    </div>
+
   </div>
-</div>
 
 </header>
 

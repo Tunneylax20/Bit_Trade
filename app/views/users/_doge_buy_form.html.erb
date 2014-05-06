@@ -15,17 +15,17 @@
 
   <label>
     QTY: 
-    <input id="doge_qty" type="integer" name="doge_total" value="1000" onkeyup="updateDoge()"/>
+    <input class="form-control" id="doge_qty" type="integer" name="doge_total" value="1000" onkeyup="updateDoge()"/>
   </label> <br><br>
 
   <label>
     Price:
-    <input id="doge_current_price" type="integer" name="price" value=<%=doge_price_usd%> readonly="true"/>
+    <input class="form-control" id="doge_current_price" type="integer" name="price" value=<%=doge_price_usd%> readonly="true"/>
   </label> <br><br>
 
   <label>
     Total: 
-    <input id="doge_total_dollars" type="text" name="usd_total" readonly="true" value=<%=doge_price_usd * 1000%> />
+    <input class="form-control" id="doge_total_dollars" type="text" name="usd_total" readonly="true" value=<%=doge_price_usd * 1000%> />
   </label><br><br>
 
   <button class="btn btn-primary">Place Doge Order</button>

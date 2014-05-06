@@ -1,6 +1,6 @@
 
 <div class="container">
-  <div class="row">
+  <div class="row stats">
     <span class="col-md-2"><strong>USD</strong>: <%= number_to_currency(@user.current_usd_balance)%></span>
     <span class="col-md-2"><strong>BTC</strong>: <%= number_with_precision(@user.current_btc_balance, :delimiter => ',')%></span>
     <span class="col-md-2"><strong>Doge</strong>: <%= number_with_precision(@user.current_doge_balance, :delimiter => ',')%></span>
@@ -13,13 +13,15 @@
   </div>
   <%= render "transaction_history" %>
 
-  <p id="button"><%= link_to "Edit My Info", edit_user_path(@user) %></p> 
+  <div class="footer">
+    <span id="button"><%= link_to "Edit My Info", edit_user_path(@user) %></span> 
 
-  <p> 
-    <%= csrf_meta_tag %>
-    <%= form_tag user_path(@user), method: "delete" do %>
-      <%= submit_tag("Delete My Account") %>
-    <% end %>
-  </p>
+    <span id="delete-account-footer"> 
+      <%= csrf_meta_tag %>
+      <%= form_tag user_path(@user), method: "delete" do %>
+        <%= submit_tag("Delete My Account") %>
+      <% end %>
+    </>
+  </div>
 
 </div>
